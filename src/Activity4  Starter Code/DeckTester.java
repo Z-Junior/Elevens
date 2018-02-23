@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * This is a class that tests the Deck class.
  */
@@ -8,6 +10,7 @@ public class DeckTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
+		/*
 		String[] ranks = {"jack", "queen", "king"};
 		String[] suits = {"blue", "red"};
 		int[] pointValues = {11, 12, 13};
@@ -50,7 +53,33 @@ public class DeckTester {
 		System.out.println("  deal: " + d.deal());
 		System.out.println();
 		System.out.println();
+		*/
 
-		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		String[] sRank = new String[52], sSuit = new String[52];
+
+		int[] iScores = new int[52];
+
+		String[] availableRanks = new String[]{
+		        "Ace", "King", "Queen", "Jack"
+        };
+
+		String[] availableSuits = new String[]{
+		        "Diamond", "Spade", "Clubs", "Hearts"
+        };
+
+		for (int i = 0; i < 52; i++)
+        {
+            sRank[i] = availableRanks[new Random().nextInt(availableRanks.length)];
+            sSuit[i] = availableSuits[new Random().nextInt(availableSuits.length)];
+            iScores[i] = new Random().nextInt(50000);
+        }
+
+        Deck deck = new Deck(sRank, sSuit, iScores);
+
+		System.out.println(deck);
+
+		deck.shuffle();
+
+		System.out.println(deck);
 	}
 }
