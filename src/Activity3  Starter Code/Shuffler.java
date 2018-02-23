@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -7,7 +10,7 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;
+	private static final int SHUFFLE_COUNT = 8;
 
 
 	/**
@@ -50,7 +53,22 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] start = new int[values.length / 2];
+		int[] end = new int[values.length - (values.length / 2)];
+
+		for (int i = 0; i < values.length / 2; i++)
+		    start[i] = values[i];
+
+		for (int i = 0; i < (values.length - (values.length / 2)); i++)
+		    end[i] = values[i + values.length / 2];
+
+		for (int i = 0; i < values.length / 2; i++)
+        {
+            values[2 * i] = end[i];
+            values[2 * i + 1] = start[i];
+        }
+
+        // System.out.print(Arrays.stream(end).mapToObj(String::valueOf).collect(Collectors.joining(", ")));
 	}
 
 	/**
@@ -65,6 +83,14 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		for (int i = 0; i < values.length; i++)
+        {
+            int iRandom = (int) Math.random() * i;
+
+            int iTemp = values[iRandom];
+
+            values[iRandom] = values[i];
+            values[i] = iTemp;
+        }
 	}
 }
