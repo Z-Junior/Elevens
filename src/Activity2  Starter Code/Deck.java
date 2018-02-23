@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  * The Deck class represents a shuffled deck of cards.
