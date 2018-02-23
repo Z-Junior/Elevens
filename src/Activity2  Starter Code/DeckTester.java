@@ -23,7 +23,7 @@ public class DeckTester {
                 )
         };
 
-		for (Deck d : decks)s
+		for (Deck d : decks)
         {
             System.out.println(d.toString());
             System.out.println(d.deal());
