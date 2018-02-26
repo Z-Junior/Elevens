@@ -95,7 +95,7 @@ public class DeckTester {
 	private static void testEmpty(Deck d) {
 		assert d.size() == 0 :  "Size for an empty deck is " + d.size()
 			+ ". It should be 0.";
-		assert d.isEmpty() : "isEmpty is false for an empty deck."; // isEmpty() is implemented incorreclty
+		assert d.isEmpty() : "isEmpty is false for an empty deck."; // isEmpty() is implemented incorrectly
 		Card c = d.deal();
 		assert c == null : "Dealt card is " + c
 			+ ". It should be null for an empty deck.";

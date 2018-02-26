@@ -108,7 +108,7 @@ public class DeckTester {
 	 */
 	private static void testOneCard(Deck d, Card intended) {
 		assert d.size() == 1 : "Size is " + d.size()
-			+ ". It should be 1 for a 1-card deck.";
+			+ ". It should be 1 for a 1-card deck."; // Size of card is not being set after the card insertion
 		assert !d.isEmpty() : "isEmpty true for a 1-card deck.";
 		Card c = d.deal();
 		assert c != null : "1st dealt card is null for a 1-card deck.";

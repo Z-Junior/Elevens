@@ -133,7 +133,7 @@ public class DeckTester {
 		while (!d1.isEmpty()) {
 			Card c1 = d1.deal();
 			Card c2 = d2.deal();
-			if (!c1.matches(c2)) {
+			if (!c1.matches(c2)) { // Assertion logic error, it's dealing from two identical deck in same way
 				allMatch = false;
 			}
 		}
